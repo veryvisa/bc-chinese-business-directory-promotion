@@ -210,8 +210,10 @@
 .yp-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:14px;margin:0 0 12px;color:var(--muted)}
 .yp-legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
 .yp-row{margin:0 0 12px}
-.yp-row .lb{display:flex;justify-content:space-between;gap:10px;font-size:14px;line-height:1.35}
-.yp-row .lb b{font-weight:600;white-space:nowrap}
+.yp-row .lb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;font-size:14px;line-height:1.35}
+.yp-row .lb span{white-space:nowrap}
+.yp-row .lb span small{color:var(--muted);font-size:12px}
+.yp-row .lb b{font-weight:600;white-space:nowrap;font-size:13px}
 .yp-bar{height:9px;border-radius:5px;margin-top:3px;background:var(--c);min-width:2px}
 .yp-small{font-size:13px;color:var(--muted);line-height:1.6;margin:10px 0 0}
 .yp-tool label{display:block;font-weight:600;margin:0 0 12px;font-size:15px}
@@ -252,7 +254,7 @@ var YP=[["餐饮、烘焙、超市",155,72,20,22,82,333,12],["装修、建筑、
 var YP_ALL=["全部华人商家",5166,28,23,56,26,15,44];
 (function(){
   var rows=YP.slice().sort(function(a,b){return b[4]-a[4]}),h="";
-  rows.forEach(function(r){h+='<div class="yp-row"><div class="lb"><span>'+r[0]+'（'+r[1].toLocaleString()+' 家）</span><b>只剩电话 '+r[4]+'% · 有网站 '+r[2]+'%</b></div><div class="yp-bar" style="--c:#9b1c31;width:'+r[4]+'%"></div><div class="yp-bar" style="--c:#c9a35a;width:'+r[2]+'%"></div></div>';});
+  rows.forEach(function(r){h+='<div class="yp-row"><div class="lb"><span>'+r[0]+' <small>'+r[1].toLocaleString()+' 家</small></span><b>只剩电话 '+r[4]+'% · 有网站 '+r[2]+'%</b></div><div class="yp-bar" style="--c:#9b1c31;width:'+r[4]+'%"></div><div class="yp-bar" style="--c:#c9a35a;width:'+r[2]+'%"></div></div>';});
   document.getElementById("yp-bars").innerHTML=h;
 })();
 </script>
