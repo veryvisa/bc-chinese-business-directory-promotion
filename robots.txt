@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://veryvisa.github.io/bc-chinese-business-directory-promotion/sitemap.xml
